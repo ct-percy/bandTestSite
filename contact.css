@@ -11,12 +11,12 @@
     background-image: linear-gradient( rgba(0,0,0,0.9), #171420 , rgba(0,0,0,0.9) );
     color: white;
     z-index: 2;  /* Ensure it's on top of other content */
-  
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
     opacity: 0;  /* Initially invisible */
-    transform: translateY(-100%);  /* Positioned above the viewport */
+    transform: translateY(-200%);  /* Positioned above the viewport */
     transition: opacity 0.5s ease, transform 0.5s ease;  /* Apply transitions for easing */
   }
   

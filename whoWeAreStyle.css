@@ -2,7 +2,7 @@
 /* Container to hold both flip cards, stacked vertically */
 .container {
   display: none;
-  z-index: 100;
+  z-index: 2;
   position: absolute;
   justify-self: center;
   flex-direction: column; /* Stack the rows vertically */

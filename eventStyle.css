@@ -5,7 +5,7 @@
   position: absolute;
   top: 0;
 
-  z-index: 100;  /* Higher z-index to appear above the carousel */
+  z-index: 2;  /* Higher z-index to appear above the carousel */
   width: 100vw;  /* Full viewport width */
   height: 100vh;  /* Full viewport height */
   justify-content: center;

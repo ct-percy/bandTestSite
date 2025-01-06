@@ -1,0 +1,193 @@
+/* General Body Styles */
+body {
+  background-color: black;
+}
+
+/* Sticky Header */
+.sticky-header {
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  height: 40px;
+  z-index: 10000;
+
+}
+
+/* Navigation Bar */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px;
+  flex-wrap: nowrap;
+  padding: 0;
+  
+
+}
+
+nav ul li {
+  margin: 10px 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+  white-space: nowrap;
+}
+
+nav ul li a:hover {
+  color: #651f5a;
+}
+
+nav ul li a.reload {
+  position: absolute;
+  left: 20px;
+  top: 13px;
+}
+
+
+
+
+/* Carousel Styles */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.carousel {
+  z-index: 1;
+  display: flex;
+  width: 300%;
+  animation: scroll-left 15s infinite linear;
+}
+
+.carousel-image {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-220vw);
+  }
+}
+
+/* Text Overlay */
+.text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100VH;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 600px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  z-index: 2;
+}
+
+.text-overlay p {
+  display: flex;
+  margin: 0;
+}
+
+.letter {
+  transition: transform 0.3s ease;
+ cursor: default;
+ 
+}
+
+.letter:hover {
+  color: #651f5a;
+  transform: scale(1.05); /* Slightly enlarges the letter on hover */
+}
+
+/* Media Query for Small Screens (Mobile Devices) */
+@media screen and (max-width: 768px) {
+  /* Sticky header adjustments */
+  .sticky-header {
+    padding: 10px 0;
+  }
+
+  /* Adjust the text size for navigation links */
+  nav ul li a {
+    font-size: 12px;
+    margin: 0 8px;
+  }
+
+  /* Section adjustments */
+  .section h1 {
+    font-size: 24px;
+  }
+
+  .section p {
+    font-size: 16px;
+  }
+
+  /* Carousel Image Setup */
+  .carousel {
+    width: 500%;
+  }
+
+  .carousel-image {
+    width: 100vw;
+    height: 60vh;
+    object-fit: cover;
+  }
+
+  /* Adjust the Text Overlay size */
+  .text-overlay {
+    font-size: 150px;
+  }
+
+
+
+  /* Hide the .reload link on mobile */
+  nav ul li a.reload {
+    display: none;
+  }
+}
+
+
+/* Main content area */
+
+
+/* Footer styles */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: black;
+  color: #fff;
+  z-index: 1000000000000000000;
+}
+
+/* Style for the left side (image) */
+.footer-left img.footer-logo {
+  width: 50px;  /* Adjust based on your image size */
+  height: auto;
+}
+
+/* Style for the right side (text) */
+.footer-right p {
+  font-size: 14px;
+  text-align: right;
+}

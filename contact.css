@@ -1,0 +1,91 @@
+/* Initially hide the contact container */
+.contactContainer {
+    display: none;  /* Hidden by default */
+    position: absolute;  /* Fixed position to cover the viewport */
+    top: 10px;  /* Start after the navigation bar */
+    left: 0;
+    width: 100vw;  /* Full viewport width */
+    height: 100vh;  /* Full viewport height */
+    max-width: 100vw;  /* Full viewport width */
+    max-height: 100vh;  /* Full viewport height */
+    background-image: linear-gradient( rgba(0,0,0,0.9), #171420 , rgba(0,0,0,0.9) );
+    color: white;
+    z-index: 100;  /* Ensure it's on top of other content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;  /* Initially invisible */
+    transform: translateY(-100%);  /* Positioned above the viewport */
+    transition: opacity 0.5s ease, transform 0.5s ease;  /* Apply transitions for easing */
+  }
+  
+  /* Show the container when the 'show' class is added */
+  .contactContainer.show {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);  /* Slide into place */
+  }
+  
+  /* Center the link */
+  .contactLink {
+    font-size: 30px;
+    color: white;
+    text-decoration: underline;
+    margin-bottom: 20px;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .contactLink:hover{
+    color: #651f5a;
+ 
+
+  }
+  
+  /* Style the contact text below the link */
+  .contactText {
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+    max-width: 80%;
+  }
+  
+  /* Style for the contact images */
+  .contactImages {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;  /* Set a max width */
+  }
+  
+  .contactImage {
+
+        width: 10vw; /* Each image takes up 25% of the viewport width, keeping it square */
+        height: auto; /* Maintain aspect ratio */
+        aspect-ratio: 1 / 1; /* Ensure square aspect ratio */
+        object-fit: contain; /* Ensure image covers the square without stretching */
+        border-radius: 8px;
+        overflow: hidden;
+
+  }
+  
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    .contactLink {
+      font-size: 24px;
+    }
+  
+    .contactText {
+      font-size: 16px;
+    }
+  
+    .contactImages {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .contactImage {
+      width: 80%;  /* Each image takes up more space on mobile */
+      margin-bottom: 15px;  /* Space between images */
+    }
+
+  }

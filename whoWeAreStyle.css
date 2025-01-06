@@ -1,7 +1,7 @@
 
 /* Container to hold both flip cards, stacked vertically */
 .container {
-
+  display: none;
   z-index: 100;
   position: absolute;
   justify-self: center;
@@ -13,12 +13,17 @@
   background-image: linear-gradient( rgba(0,0,0,0.9), rgba(128,0,128,1), rgba(0,0,0,0.9) );
   width: 100vw;
   transition: opacity 0.5s ease-in-out; /* Smooth transition for fading */
-
+opacity: 0;
   top:0;
 
 
   
   /* Other existing styles */
+}
+.container.show {
+  display: flex;  /* Make visible when the 'show' class is added */
+  opacity: 1;
+  
 }
 
 /* Each pair of cards will be placed next to each other */

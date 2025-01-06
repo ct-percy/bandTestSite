@@ -1,253 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
 
-/* Container to hold both flip cards, stacked vertically */
-.container {
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VeroSoul</title>
+  <link rel="stylesheet" href="whoWeArestyle.css">
+  <link rel="stylesheet" href="carouselStyle.css">
+  <link rel="stylesheet" href="musicStyle.css">
+  <link rel="stylesheet" href="eventStyle.css">
+  <link rel="stylesheet" href="contact.css">
+  <script src="https://kit.fontawesome.com/8ae295501a.js" crossorigin="anonymous"></script>
+</head>
 
-  z-index: 100;
-  position: absolute;
-  justify-self: center;
-  display: none;
-  flex-direction: column; /* Stack the rows vertically */
-  gap: 20px;  /* Add space between rows */
-  max-width: 100vw; /* Preventah overflow on mobile */
-  height: 100vh;
-  max-height: 100vh;
-  background-image: linear-gradient( rgba(0,0,0,0.9), rgba(128,0,128,1), rgba(0,0,0,0.9) );
-  width: 100vw;
-  transition: opacity 0.5s ease-in-out; /* Smooth transition for fading */
-  display: none;
-  top:0;
-
-
+<body>
   
-  /* Other existing styles */
-}
 
-/* Each pair of cards will be placed next to each other */
-.card-pair {
-  display: flex;
-  flex-direction: row; /* Align the flip card and image card horizontally */
-  margin-top: 10px; /* Remove any margins */
-  padding: 0; /* Remove any padding */
-    /* Add space between the cards */
-  justify-content: center; /* Center the items horizontally */
-  align-items: center; /* Center the items vertically */
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
-  width: 100%; /* Ensure card-pair takes up full width of the container */
-  height: 15%;
-}
+    <!--START HEADER-->
+    <header class="sticky-header">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#"  id="reload" class="reload">Vero Soul</a></li> 
+          <li><a href="#whoWeAre" id="whoWeAreLink">Who We Are</a></li>
+          <li><a href="#music" id="musicLink">Music</a></li>
+          <li><a href="#Events" id="eventsLink">Events</a></li>
+          <li><a href="#contact" id="contactLink" >Contact</a></li>
+        </ul>
+      </nav> 
+    </header>
+    <!--END HEADER-->
 
-
-/* The flip-container and the image-container are styled similarly */
-.flip-container, .image-container {
-  position: relative;  /* For positioning inside flip-card or image-card */
-
-  perspective: 1000px; /* Add perspective to create a 3D effect */
-  margin: 0; /* Remove margin */
-  padding: 0; /* Remove padding */
-}
-
-/* Set the image-container dimensions to 200x200 */
-.image-container {
-  width: 200px;  /* Set width of image container to 200px */
-  height: 170px;  /* Set height of image container to 200px */
-}
-
-/* Set the flip-container width to three times the width of image-container */
-.flip-container {
-  width: 600px;  /* Set width of flip container to 600px (three times the image-container width) */
-  height: 150px;  /* Keep the same height as the image-container */
+    <!-- Carousel View -->
+    <div class="carousel-container">
+      <div class="carousel">
+        <img class="carousel-image" src="singer.jpg" alt="Image 1">
+        <img class="carousel-image" src="bassBG.jpg" alt="Image 2">
+        <img class="carousel-image" src="drummer.jpg" alt="Image 3">
+        <img class="carousel-image" src="vocals.png" alt="Image 4">
+        <img class="carousel-image" src="singer.jpg" alt="Image 5">
+        <img class="carousel-image" src="bassBG.jpg" alt="Image 2">
+        <img class="carousel-image" src="drummer.jpg" alt="Image 3">
+      </div>
+      <div class="text-overlay">
+        <p><span class="letter">V</span><span class="letter">E</span><span class="letter">R</span><span class="letter">O</span></p>
+      </div>
+    </div>
+    <!--END CAROUSEL-->
 
 
-}
 
-/* First flip card (rectangle) */
-.flip-card {
-  width: 90%;
-  height: 100%;
-  left: 20px;
-  position: relative;
-  transform-style: preserve-3d;  /* Maintain 3D effect */
-  transition: transform 0.6s;  /* Smooth flip transition */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);  /* Add shadow to flip card */
-  border-radius: 15px;  /* Rounded corners for the flip card */
-}
+<!--#region WHO WE ARE SECTION-->
+  <div  class="container"   >
+    <div class="card-pair"> 
+    <div class="flip-container" >
+    <div class="flip-card topcard" >
+        <div class="flip-card-front band" style="background-size: 100%; background-position: 0px -50px;" >
+          <u style="opacity: .9;"> Vero Soul </u>
+        </div>
+        <div class="flip-card-back">
+           <h3><u> True; Real; Genuine; Spirit; Art; Self;</u> <br><br>
+          <p> This is a bio about how the band got together. Where we are in Las Vegas. The type of music that we play. What the band means to us and why we play what we play. Vero; Vero Sol; Vero Soul;</p></h3>
+        </div>
+      </div>
+  </div>
+</div>
+    <!-- First row of cards -->
+    <div class="card-pair">
+      <div class="flip-container">
+        <div class="flip-card">
+          <div style="background-position: -80px -80px;" class="flip-card-front vocalsBG">
+            VOCALS
+          </div>
+          <div class="flip-card-back">
+             <h3><u> Amy 'Aims' Amerson</u> <br><br>
+            <p> This is a bio of how i am a singer. I sing songs for the music to have lyrics extra things about how i sing alot also go here. this is the length of the full stuff</p></h3>
+          </div>
+        </div>
+      </div>
+      <div class="image-container">
+        <div class="image-card singerPhoto" > </div>
+      </div>
+    </div>
 
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;  /* Hide back when flipped */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 20px;
-  color: white;
-  background-color: #3498db;
-  border: 2px solid white;
-  border-radius: 15px;  /* Rounded corners for the flip card */
+    <!-- Second row of cards (swap flip card and image card) -->
+    <div class="card-pair">
+      <div class="image-container">
+        <div class="image-card guitaristPhoto"></div>
+      </div>
+      <div class="flip-container">
+        <div class="flip-card">
+          <div style="background-position: -190px -190px;" class="flip-card-front guitarBG">
+            Guitar
+          </div>
+          <div class="flip-card-back">
+            <h3><u> Garry 'Guy' Guitarson</u> <br><br>
+              <p> This is a bio of how i play guitar. The guitar has 6 strings and i pluck them to make noises. the noise can either be acousting or electric and it sounds cool</p></h3>
+          </div>
+        </div>
+      </div>
+      
+    </div>
 
-}
+    <!-- Third row of cards -->
+    <div class="card-pair">
+      <div class="flip-container">
+        <div class="flip-card">
+          <div class="flip-card-front bassBG"  style="background-position: 30px -100px;">
+            BASS
+          </div>
+          <div class="flip-card-back">
+            <h3><u> Barry 'Bass' Bastion </u> <br><br>
+              <p> This is a bio of how i play bass. I make cool deep sounds and i am not a fish even though the instrument is spelt like one. What came first, the instrument or the fish?</p></h3>
+          </div>
+        </div>
+      </div>
+      <div class="image-container">
+        <div class="image-card bassistPhoto"></div>
+      </div>
+    </div>
 
-/* Back side of the card (for flipped content) */
-.flip-card-back {
-  background-color: #651f5a;
-  transform: rotateX(180deg);  /* Flip the back side */
-  text-align: center;
-  padding: 15px; /* Add padding to prevent text from touching edges */
-  box-sizing: border-box; /* Ensure padding doesn't overflow */
-  overflow: hidden; /* Prevent text from overflowing the div */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column; /* Align text vertically */
-}
+    <!-- Fourth row of cards (swap flip card and image card) -->
+    <div class="card-pair">
+      <div class="image-container">
+        <div class="image-card drummer" ></div>
+      </div>
+      <div class="flip-container">
+        <div class="flip-card">
+          <div style="background-position: -1px -350px" class="flip-card-front drumsBG">
+            DRUMS
+          </div>
+          <div class="flip-card-back">
+            <h3><u> Dave 'D-RUM' Drummerson </u> <br><br>
+              <p> This is a bio about how i play drums. i use two sticks to hit things and it keeps everyone on beat. i am the super metronome</p></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-.flip-card-back h3 {
-  font-style: italic;
-  text-shadow: 2px 2px 4px #000000;
-  font-size: 18px; /* Adjust the font size for better fit */
-  margin-bottom: 10px; /* Add space between title and paragraph */
-}
+<!-- #endregion -->
 
-.flip-card-back p {
-  font-size: 14px;  /* Reduce font size to fit the container */
-  margin: 0; /* Remove margin to prevent overflow */
-  padding: 5px;
-  text-align: center; /* Center the paragraph text */
-  max-width: 100%; /* Ensure the paragraph doesn't overflow */
-}
+<!-- #region MUSIC Section-->
+<div class="musicContainer">
 
-/* Flip card front styles */
-.flip-card-front {
-  font-size: 100px;
-  font-family: fantasy;
-  letter-spacing: 10px;
-  font-style: italic;
-  text-align: center;
-  padding: 10px; /* Add padding to prevent text from touching the edges */
-}
+  <!-- Left side: Image and Music Player -->
+  <div class="left-side">
+    <span>STREAM OUR NEWEST SINGLE - "MAZZIE"</span>
+    <img src="singleCover.jpg" alt="Music Image" class="image">
+    <audio controls class="music-player">
+      <source src="Mazzie - VeroSol.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+    
+    <!-- 4 images below the music player -->
+     <span>Catch us on these platforms!</span>
+    <div class="image-row">
+      <img src="spotify.png" alt="Image 1" class="row-image">
+      <img src="appleMusic.png" alt="Image 2" class="row-image">
+      <img src="deezer.png" alt="Image 3" class="row-image">
+      <img src="iheartradio.png" alt="Image 4" class="row-image">
+    </div>
+  </div>
 
-/* Hover effect on the first flip card */
-.flip-card:hover {
-  transform: rotateX(180deg);
-}
+</div>
 
-/* Flip the card when hovering over the card pair */
-.card-pair:hover .flip-card {
-  transform: rotateX(180deg);  /* Flip the card when hovering over the pair */
-}
 
-/* Second div (square with image) */
-.image-card {
-  width: 170px;
-  height: 170px;  /* Square dimensions */
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  border: 2px solid white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 18px;
-  text-align: center;
-  /* Make the image card rounded */
-  border-radius: 50%;  /* Fully rounded corners */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Add shadow to the circular image */
-}
+<!-- #endregion -->
 
-/*ADD PHOTOS HERE (change background position in HTML depending on photo) */
-.singerPhoto {
-  background-image: url('singer.jpg'); /* Replace with your image URL */
-}
+<!-- #region Events Section-->
+<div class="events-carousel-container">
+  <!-- Events Carousel -->
+  <div class="events-carousel">
+      <div class="events-carousel-slide">
+          <div class="events-carousel-content">
+              <img src="event.png" alt="Image 1" class="events-carousel-image">
+              <div class="events-carousel-text">
+                  <h2>1 Las Vegas Hope Fundraiser</h2>
+                  <p >Backstage Bar & Billiards</p>
+                  <p style="font-size: 25px; margin-top: -10px; font-style: italic; ">601 E Fremont St, Las Vegas, NV 89101, USA</p>
+                <p style="color: yellow;"> Sat, Dec 21, 8:00 PM </p>
+                <p style="font-size: 15px; margin-top: -10px; color: red;">  *This is a 21+ event </p>
 
-.vocalsBG {
-  background-image: url('vocals.png');
-}
+                <h2 class="tickets hoverColor">BUY TICKETS HERE</h2>
+              </div>
+          </div>
+      </div>
+  
+      <div class="events-carousel-slide last-slide">
+          <div class="events-carousel-text">
+              <p>More events coming soon!</p>
+          </div>
+      </div>
+  </div>
+  
+  <!-- Arrows -->
+  <button class="events-carousel-arrow left hoverColor" id="prevBtn">&#10094;</button>
+  <button class="events-carousel-arrow right hoverColor" id="nextBtn">&#10095;</button>
+</div>
+<!-- #endregion -->
 
-.guitaristPhoto {
-  background-image: url('guitarist.png');
-}
+<!-- #region Contact Section-->
 
-.guitarBG {
-  background-image: url('guitarBG.jpg');
-}
+<div class="contactContainer">
+  <a class="contactLink" href="mailto:verosoulnv@gmail.com">Booking Request</a>
+  <p class="contactText">Follow us here</p>
+  
+  <div class="contactImages">
+    <img src="x.png" alt="Image 1" class="contactImage row-image">
+    <img src="facebook.png" alt="Image 2" class="contactImage row-image">
+    <img src="instagram.png" alt="Image 3" class="contactImage row-image">
+    <img src="youtube.png" alt="Image 4" class="contactImage row-image youtubeImage" style="transform: scale(1.3);">
+  </div>
+</div>
 
-.bassistPhoto {
-  background-image: url('bassist.jpg');
-}
+ <!-- #endregion -->
 
-.bassBG {
-  background-image: url('bassBG.jpg');
-}
+  <!-- #region Footer -->
+  <footer class="footer">
+    <div class="footer-left">
+      <img src="VeroSign_Final2.jpg" alt="Logo" class="footer-logo">
+    </div>
+    <div class="footer-right">
+      <p>&copy; 2025 Gr8Twr. All rights reserved.</p>
+    </div>
+  </footer>
 
-.drumsBG {
-  background-image: url('https://cdn.britannica.com/81/260981-050-815F8A1E/blink-182-drummer-travis-barker-performs-onstage-at-madison-square-garden-on-may-19-2023.jpg');
-}
 
-.drummer {
-  background-image: url('drummer.jpg');
-}
+ <!-- #endregion -->
 
-.band{
-  background-image: url('bandPic.jpg');
-}
+  <script src="scripts.js"></script>
 
-/* Mobile adjustments: Hide the image-container on mobile devices */
-@media (max-width: 768px) {
-  /* Hide the image-container */
-  .image-container {
-    display: none;
-  }
+</body>
 
-  /* Make the card-pair layout adjust for mobile */
-  .card-pair {
-    flex-direction: row; /* Keep the content horizontally aligned */
-    gap: 10px; /* Reduce the gap between items */
-    width: 100%; /* Ensure card-pair fits within the container */
-    justify-content: space-between; /* Add space between the cards */
-    align-items: center; /* Vertically align cards */
-  }
-
-  /* Resize the flip-container for mobile */
-  .flip-container {
-    width: 250px;  /* Adjust flip card width for smaller screens */
-    height: 150px; /* Maintain the height for mobile */
-    padding: 10px; /* Add padding to prevent text from touching the edges */
-  }
-
-  /* Adjust text in flip-card-back */
-  .flip-card-back h3,
-  .flip-card-back p {
-    font-size: 12px;  /* Reduce font size even more for better fit on mobile */
-    padding: 5px; /* Add padding around text */
-    text-align: center; /* Ensure text is centered */
-    margin: 0; /* Remove any default margin */
-  }
-
-  /* Ensure the text doesn't overflow or get cut off */
-  .flip-card-back {
-    padding: 10px; /* Add more padding if necessary */
-    box-sizing: border-box; /* Ensure padding doesn't overflow */
-    overflow: hidden; /* Prevent any text overflow */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; /* Stack content vertically */
-  }
-
-  /* Adjust text in flip-card-front */
-  .flip-card-front {
-    font-size: 40px;  /* Reduce the font size for mobile */
-    letter-spacing: 5px;  /* Reduce the letter-spacing for better fit */
-    padding: 10px; /* Ensure padding for spacing around text */
-    text-align: center;  /* Keep the text centered */
-  }
-}
-
-.topcard{
-  margin-top: 5%;
-  height: 140px;
-
-}
+</html>

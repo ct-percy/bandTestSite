@@ -7,7 +7,7 @@
 
 /* General Container Settings */
 .musicContainer {
-  display: flex;
+  display: none;
   justify-content: center;  /* Center the contents horizontally */
   align-items: center;  /* Center the contents vertically */
   text-align: center;

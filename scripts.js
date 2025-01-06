@@ -10,10 +10,7 @@ window.addEventListener('load', function() {
   
 
 
-  //////////////////////////////Music script
-
-
-/////////////////////////////EVENTS 
+/////////////////////////////EVENTS CAROUSEL
 
 let currentIndex = 0;
 const slides = document.querySelectorAll('.events-carousel-slide');
@@ -44,76 +41,11 @@ nextButton.addEventListener('click', () => {
 // Initial setup
 showSlide(currentIndex);
 
-
-
-document.addEventListener("DOMContentLoaded", function() {
-  // Get the "Who We Are" link, "Music" link, and their respective containers
-  const whoWeAreLink = document.getElementById("whoWeAreLink");
-  const musicLink = document.getElementById("musicLink");
-  const container = document.querySelector(".container");
-  const musicContainer = document.querySelector(".musicContainer");
-
-  // Initially hide both containers
-  container.style.opacity = 0;
-  container.style.display = "none"; // Hide the container initially
-  musicContainer.style.opacity = 0;
-  musicContainer.style.display = "none"; // Hide the music container initially
-
-  // Function to toggle the visibility of a container with fade effect
-  function toggleContainer(container) {
-    if (container.style.display === "none" || container.style.display === "") {
-      container.style.display = "flex"; // Show the container
-      setTimeout(() => {
-        container.style.opacity = 1; // Fade-in effect
-      }, 10); // Small delay for the transition to take effect
-    } else {
-      container.style.opacity = 0; // Fade-out effect
-      setTimeout(() => {
-        container.style.display = "none"; // Hide the container after fade
-      }, 500); // Time should match the fade-out duration (500ms here)
-    }
-  }
-
-  // Add click event listener to the "Who We Are" link
-  whoWeAreLink.addEventListener("click", function(event) {
-    event.preventDefault(); // Prevent default link behavior
-    toggleContainer(container);
-  });
-
-  // Add click event listener to the "Music" link
-  musicLink.addEventListener("click", function(event) {
-    event.preventDefault(); // Prevent default link behavior
-    toggleContainer(musicContainer);
-  });
-
-  // Add a click event listener on the document to hide both containers when clicking anywhere else
-  document.addEventListener("click", function(event) {
-    // If the clicked target is not the whoWeAreLink, musicLink, or their respective containers, hide them
-    if (!whoWeAreLink.contains(event.target) && !container.contains(event.target) && 
-        !musicLink.contains(event.target) && !musicContainer.contains(event.target)) {
-      // Hide both containers if clicked outside
-      container.style.opacity = 0;
-      setTimeout(() => {
-        container.style.display = "none";
-      }, 500);
-      
-      musicContainer.style.opacity = 0;
-      setTimeout(() => {
-        musicContainer.style.display = "none";
-      }, 500);
-    }
-  });
-});
+/////////////////////////////////END EVENT CAROUSEL
 
 
 
-
-
-
-
-
-
-
+////////////RELOAD WEB PAGE WHEN CLICKING VERO SOUL
 document.addEventListener("DOMContentLoaded", function() {
   // Get the "Vero Soul" link element
   const veroSoulLink = document.getElementById("reload");
@@ -126,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function() {
       location.reload(); // This reloads the page
   });
 });
+///////////////END RELOAD WEB PAGE
 
 
 
@@ -136,8 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
-
+////////////////////LOAD EVENTS PAGE
  // Select the events link and the events carousel container
  const eventsLink = document.getElementById('eventsLink');
  const eventsCarouselContainer = document.querySelector('.events-carousel-container');
@@ -165,6 +97,38 @@ document.addEventListener("DOMContentLoaded", function() {
      }, 10);  // Small delay to ensure the display is set before transition
    }
  });
+////////////////////END LOAD EVENTS PAGE
+
+
+
+
+
+const whoWeAreLink = document.getElementById('whoWeAreLink');
+const container = document.querySelector('.container');
+
+// Add an event listener to the "Events" link
+whoWeAreLink.addEventListener('click', function (event) {
+  event.preventDefault();  // Prevent default link behavior (no page reload)
+
+  // Toggle the 'show' class for the events carousel container
+  if (container.classList.contains('show')) {
+    // Hide the events carousel container
+    container.classList.remove('show');
+    
+    // Wait for the animation to finish before setting display to none
+    setTimeout(function() {
+      container.style.display = 'none';
+    }, 500);  // Matches the transition duration (0.5s)
+  } else {
+    // Show the events carousel container
+    container.style.display = 'flex';
+    
+    // Add the 'show' class to trigger the fade-in and slide-in transition
+    setTimeout(function() {
+      container.classList.add('show');
+    }, 10);  // Small delay to ensure the display is set before transition
+  }
+});
 
 
 
@@ -176,6 +140,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+
+
+
+//////////////////////SHOW THE CONTACTS PAGE
  // Select the Contact link and the contact container
  const contactLink = document.getElementById('contactLink');  // Assuming the Contact link has the ID "contactLink"
  const contactContainer = document.querySelector('.contactContainer');  // The contactContainer div
@@ -203,3 +171,4 @@ document.addEventListener("DOMContentLoaded", function() {
      }, 10);  // Small delay to ensure display is set before transition
    }
  });
+ /////////////END SHOW CONTACTS

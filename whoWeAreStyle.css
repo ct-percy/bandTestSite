@@ -198,60 +198,73 @@ opacity: 0;
   background-image: url('bandPic.jpg');
 }
 
-/* Mobile adjustments: Hide the image-container on mobile devices */
-@media (max-width: 768px) {
-  /* Hide the image-container */
-  .image-container {
-    display: none;
-  }
-
-  /* Make the card-pair layout adjust for mobile */
-  .card-pair {
-    flex-direction: row; /* Keep the content horizontally aligned */
-    gap: 10px; /* Reduce the gap between items */
-    width: 100%; /* Ensure card-pair fits within the container */
-    justify-content: space-between; /* Add space between the cards */
-    align-items: center; /* Vertically align cards */
-  }
-
-  /* Resize the flip-container for mobile */
-  .flip-container {
-    width: 250px;  /* Adjust flip card width for smaller screens */
-    height: 150px; /* Maintain the height for mobile */
-    padding: 10px; /* Add padding to prevent text from touching the edges */
-  }
-
-  /* Adjust text in flip-card-back */
-  .flip-card-back h3,
-  .flip-card-back p {
-    font-size: 12px;  /* Reduce font size even more for better fit on mobile */
-    padding: 5px; /* Add padding around text */
-    text-align: center; /* Ensure text is centered */
-    margin: 0; /* Remove any default margin */
-  }
-
-  /* Ensure the text doesn't overflow or get cut off */
-  .flip-card-back {
-    padding: 10px; /* Add more padding if necessary */
-    box-sizing: border-box; /* Ensure padding doesn't overflow */
-    overflow: hidden; /* Prevent any text overflow */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; /* Stack content vertically */
-  }
-
-  /* Adjust text in flip-card-front */
-  .flip-card-front {
-    font-size: 40px;  /* Reduce the font size for mobile */
-    letter-spacing: 5px;  /* Reduce the letter-spacing for better fit */
-    padding: 10px; /* Ensure padding for spacing around text */
-    text-align: center;  /* Keep the text centered */
-  }
-}
-
 .topcard{
   margin-top: 5%;
   height: 140px;
 
+}
+
+/* Mobile adjustments: Hide the image-container on mobile devices */
+@media (max-width: 768px) {
+  .container {
+  
+    flex-direction: column; /* Stack the card-pair vertically on mobile */
+    height: 100%; /* Keep the height of the container at 100vh */
+    width: 100%;
+    overflow-y: scroll;
+   
+  }
+
+  /* Hide the image-container on mobile devices */
+  .image-container {
+    display: none;
+  }
+
+  /* Ensure that the card-pair is stacked vertically */
+  .card-pair {
+    display: flex;
+    flex-direction: column; /* Stack flip cards vertically */
+    justify-content: center; /* Center the cards vertically */
+    align-items: center; /* Center the cards horizontally */
+   
+    width: 100vw; /* Allow card-pair to shrink or grow as necessary */
+    height: auto; /* Let the height adjust based on the number of cards */
+  }
+
+  /* Flip cards should be centered within their container */
+  .flip-container {
+    width: 100vw;  /* Adjust width of flip cards for smaller screens */
+    height: 25vh; /* Adjust height for better stacking on mobile */
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Center text in the flip-card */
+  .flip-card-front, .flip-card-back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;  /* Smaller font for mobile */
+    letter-spacing: 5px; /* Adjust the letter-spacing */
+    text-align: center;
+   
+  }
+
+  /* Adjust the text in the flip card */
+  .flip-card-back h3,
+  .flip-card-back p {
+    font-size: 12px;  /* Reduce font size for mobile */
+
+    text-align: center; /* Ensure text is centered */
+    margin: 0;
+  }
+
+  /* Ensure flip cards are centered within the container */
+  .flip-card {
+    width: 90vw; /* Smaller flip card width for mobile */
+    height: 25vh; /* Let height adjust based on content */
+    left: 0;
+  }
 }

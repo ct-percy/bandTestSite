@@ -90,7 +90,7 @@
     }
   
     .contactImage {
-      max-width: 10%;  /* Each image takes up more space on mobile */
+      max-width: 20px;  /* Each image takes up more space on mobile */
       margin-bottom: 15px;  /* Space between images */
     }
 

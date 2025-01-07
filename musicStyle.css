@@ -94,3 +94,18 @@
   text-shadow: 5px 5px 5px #651f5a;
   margin-bottom: 20px; /* Space between text and image */
 }
+
+@media (max-width: 768px) {
+
+
+.musicContainer{
+  overflow-y: scroll;
+  height: 100%;
+  width: 100%;
+}
+.musicContainer span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: larger;
+}
+
+}

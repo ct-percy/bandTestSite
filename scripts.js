@@ -202,3 +202,14 @@ contactLink.addEventListener('click', function (event) {
  }
 });
 /////////////END SHOW CONTACTS
+
+
+
+// Add event listener to the flip-container to handle taps on mobile
+document.querySelectorAll('.flip-container').forEach(container => {
+  container.addEventListener('click', () => {
+    const card = container.querySelector('.flip-card');
+    // Toggle the 'flipped' class on click/tap
+    card.classList.toggle('flipped');
+  });
+});

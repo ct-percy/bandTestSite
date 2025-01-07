@@ -1,3 +1,5 @@
+
+////////////VERO SOUL TEXT OVERLAY
 // JavaScript to make the text overlay fade in on page load
 window.addEventListener('load', function() {
   const textOverlay = document.querySelector('.text-overlay');
@@ -8,10 +10,10 @@ window.addEventListener('load', function() {
   }, 900); // Delay to ensure CSS transition starts after the page load
 });
 
+////////////END VERO SOUL TEXT OVERLAY
 
 
 /////////////////////////////EVENTS CAROUSEL
-
 let currentIndex = 0;
 const slides = document.querySelectorAll('.events-carousel-slide');
 const totalSlides = slides.length;
@@ -40,10 +42,7 @@ nextButton.addEventListener('click', () => {
 
 // Initial setup
 showSlide(currentIndex);
-
 /////////////////////////////////END EVENT CAROUSEL
-
-
 
 ////////////RELOAD WEB PAGE WHEN CLICKING VERO SOUL
 document.addEventListener("DOMContentLoaded", function() {
@@ -60,15 +59,6 @@ veroSoulLink.addEventListener("click", function(event) {
 });
 ///////////////END RELOAD WEB PAGE
 
-
-
-
-
-
-
-
-
-
 ////////////////////LOAD EVENTS PAGE
 // Select the events link and the events carousel container
 const eventsLink = document.getElementById('eventsLink');
@@ -82,7 +72,7 @@ eventsLink.addEventListener('click', function (event) {
  if (eventsCarouselContainer.classList.contains('show')) {
    // Hide the events carousel container
    eventsCarouselContainer.classList.remove('show');
-   
+  
    // Wait for the animation to finish before setting display to none
    setTimeout(function() {
      eventsCarouselContainer.style.display = 'none';
@@ -90,7 +80,16 @@ eventsLink.addEventListener('click', function (event) {
  } else {
    // Show the events carousel container
    eventsCarouselContainer.style.display = 'flex';
-   
+   //hide other containers
+   container.classList.remove('show');
+   musicContainer.classList.remove('show');
+   contactContainer.classList.remove('show');
+      //time out for smooth transition
+   setTimeout(function() {
+   container.style.display = 'none';
+   musicContainer.style.display = 'none';
+   contactContainer.style.display = 'none';
+ }, 1000);
    // Add the 'show' class to trigger the fade-in and slide-in transition
    setTimeout(function() {
      eventsCarouselContainer.classList.add('show');
@@ -98,11 +97,6 @@ eventsLink.addEventListener('click', function (event) {
  }
 });
 ////////////////////END LOAD EVENTS PAGE
-
-
-
-
-
 
 ////////////////////////////LOAD WHO WE ARE LINK
 const whoWeAreLink = document.getElementById('whoWeAreLink');
@@ -124,7 +118,16 @@ if (container.classList.contains('show')) {
 } else {
   // Show the events carousel container
   container.style.display = 'flex';
-  
+  //hide other containers
+  eventsCarouselContainer.classList.remove('show');
+  musicContainer.classList.remove('show');
+  contactContainer.classList.remove('show');
+     //time out for smooth transition
+  setTimeout(function() {
+  eventsCarouselContainer.style.display = 'none';
+  musicContainer.style.display = 'none';
+  contactContainer.style.display = 'none';
+  },1000);
   // Add the 'show' class to trigger the fade-in and slide-in transition
   setTimeout(function() {
     container.classList.add('show');
@@ -132,12 +135,6 @@ if (container.classList.contains('show')) {
 }
 });
 /////////////////////////////// END LOAD WHO WE ARE 
-
-
-
-
-
-
 
 ////////////////////////////LOAD MUSIC PAGE
 const musicLink = document.getElementById('musicLink');
@@ -159,7 +156,16 @@ if (musicContainer.classList.contains('show')) {
 } else {
   // Show the events carousel container
   musicContainer.style.display = 'flex';
-  
+  //hide other containers
+  container.classList.remove('show');
+  eventsCarouselContainer.classList.remove('show');
+  contactContainer.classList.remove('show');
+  //time out for smooth transition
+  setTimeout(function() {
+  container.style.display = 'none';
+  eventsCarouselContainer.style.display = 'none';
+  contactContainer.style.display = 'none';
+  },1000);
   // Add the 'show' class to trigger the fade-in and slide-in transition
   setTimeout(function() {
     musicContainer.classList.add('show');
@@ -167,11 +173,6 @@ if (musicContainer.classList.contains('show')) {
 }
 });
 /////////////////////////////// END LOAD MUSIC PAGE
-
-
-
-
-
 
 //////////////////////SHOW THE CONTACTS PAGE
 // Select the Contact link and the contact container
@@ -194,7 +195,17 @@ contactLink.addEventListener('click', function (event) {
  } else {
    // Show the contact container
    contactContainer.style.display = 'flex';
-   
+
+   //hide other containers
+   container.classList.remove('show');
+   musicContainer.classList.remove('show');
+   eventsCarouselContainer.classList.remove('show');
+   //time out for smooth transition
+   setTimeout(function() {
+   container.style.display = 'none';
+   musicContainer.style.display = 'none';
+   eventsCarouselContainer.style.display = 'none';
+   },1000);
    // Add the 'show' class to trigger the fade-in and slide-in transition
    setTimeout(function() {
      contactContainer.classList.add('show');
@@ -203,9 +214,7 @@ contactLink.addEventListener('click', function (event) {
 });
 /////////////END SHOW CONTACTS
 
-
-
-// Add event listener to the flip-container to handle taps on mobile
+////////////////FLIP-CONTAINER TAP ON MOBILE
 document.querySelectorAll('.flip-container').forEach(container => {
   container.addEventListener('click', () => {
     const card = container.querySelector('.flip-card');
@@ -213,3 +222,4 @@ document.querySelectorAll('.flip-container').forEach(container => {
     card.classList.toggle('flipped');
   });
 });
+//////////////// END FLIP-CONTAINER TAP ON MOBILE

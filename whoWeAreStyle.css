@@ -133,12 +133,12 @@ opacity: 0;
 }
 
 /* Hover effect on the first flip card */
-.flip-card:hover {
+.flip-card:hover, .flip-card:active{
   transform: rotateX(180deg);
 }
 
 /* Flip the card when hovering over the card pair */
-.card-pair:hover .flip-card {
+.card-pair:hover .flip-card, .card-pair:active .flip-card {
   transform: rotateX(180deg);  /* Flip the card when hovering over the pair */
 }
 

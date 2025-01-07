@@ -1,9 +1,9 @@
-/* General Body Styles */
+
 body {
   background-color: black;
 }
 
-/* Sticky Header */
+/* #region Header*/
 .sticky-header {
   position:fixed;
   top: 0;
@@ -12,10 +12,7 @@ body {
   background-color: black;
   height: 40px;
   z-index: 999;
-
 }
-
-/* Navigation Bar */
 nav ul {
   list-style: none;
   display: flex;
@@ -51,11 +48,9 @@ nav ul li a.reload {
   left: 20px;
   top: 13px;
 }
+/*#endregion */
 
-
-
-
-/* Carousel Styles */
+/*#region Main Page Carousel*/
 .carousel-container {
   position: relative;
   width: 100%;
@@ -85,8 +80,6 @@ nav ul li a.reload {
     transform: translateX(-220vw);
   }
 }
-
-/* Text Overlay */
 .text-overlay {
   position: absolute;
   top: 0;
@@ -117,23 +110,52 @@ nav ul li a.reload {
 
 .letter:hover {
   color: #651f5a;
-  transform: scale(1.05); /* Slightly enlarges the letter on hover */
+  transform: scale(1.05);
+}
+/*#endregion */
+
+/*#region Footer styles */
+.footer {
+  display: flex;
+  position: sticky;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: black;
+  color: #fff;
+  z-index: 999;
+
 }
 
-/* Media Query for Small Screens (Mobile Devices) */
+.footer-left img.footer-logo {
+  width: 50px; 
+  height: auto;
+}
+
+.footer-right p {
+  font-size: 14px;
+  text-align: right;
+}
+/*#endregion */
+
+
+/*#region Mobile Style */
 @media screen and (max-width: 768px) {
-  /* Sticky header adjustments */
   .sticky-header {
-    padding: 10px 0;
+    padding: 10px 4px;
   }
 
-  /* Adjust the text size for navigation links */
+  .nav-links {
+
+    justify-content: center;
+
+  }
+
   nav ul li a {
     font-size: 12px;
-    margin: 0 8px;
+ margin: 0;
   }
 
-  /* Section adjustments */
   .section h1 {
     font-size: 24px;
   }
@@ -142,8 +164,8 @@ nav ul li a.reload {
     font-size: 16px;
   }
 
-  /* Carousel Image Setup */
   .carousel {
+    margin-top: 40%;
     width: 500%;
   }
 
@@ -153,42 +175,13 @@ nav ul li a.reload {
     object-fit: cover;
   }
 
-  /* Adjust the Text Overlay size */
   .text-overlay {
     font-size: 150px;
+
   }
 
-
-
-  /* Hide the .reload link on mobile */
   nav ul li a.reload {
     display: none;
   }
 }
-
-
-/* Main content area */
-
-
-/* Footer styles */
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: black;
-  color: #fff;
-  z-index: 999;
-}
-
-/* Style for the left side (image) */
-.footer-left img.footer-logo {
-  width: 50px;  /* Adjust based on your image size */
-  height: auto;
-}
-
-/* Style for the right side (text) */
-.footer-right p {
-  font-size: 14px;
-  text-align: right;
-}
+/*#endregion */

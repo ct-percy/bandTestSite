@@ -87,11 +87,11 @@
     .contactImages {
       flex-direction: column;
       align-items: center;
-      max-height: 50vh;
+     height: 50vh;
     }
   
     .contactImage {
-     
+      width: 25%;
       max-width: 25%;  /* Each image takes up more space on mobile */
       margin-bottom: 15px;  /* Space between images */
     }

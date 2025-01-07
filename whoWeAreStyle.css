@@ -133,14 +133,18 @@ opacity: 0;
 }
 
 /* Hover effect on the first flip card */
-.flip-card:hover, .flip-card:active{
+.flip-card:hover{
   transform: rotateX(180deg);
 }
 
 /* Flip the card when hovering over the card pair */
-.card-pair:hover .flip-card, .card-pair:active .flip-card {
+.card-pair:hover .flip-card {
   transform: rotateX(180deg);  /* Flip the card when hovering over the pair */
 }
+  /* On mobile, use touch events for the flip */
+  .flip-container:active .flip-card {
+    transform: rotateY(180deg);  /* Flip the card when tapped */
+  }
 
 /* Second div (square with image) */
 .image-card {
